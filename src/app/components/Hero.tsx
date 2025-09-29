@@ -84,7 +84,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-gray-300 max-w-prose sm:max-w-xl text-sm sm:text-base">
-            I’m a Software Developer with 4+ years of experience building
+            I’m a Software Developer with 5+ years of experience building
             full-stack and cloud-native applications using Java, Spring Boot,
             React/Next.js, and AWS. With proven experience in Data Structures and Algorithms,
             I specialize in designing scalable microservices and secure APIs that perform under

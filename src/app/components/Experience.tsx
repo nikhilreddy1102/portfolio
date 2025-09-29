@@ -56,7 +56,7 @@ export default function Experience() {
         {/* Example Job 3 */}
         <div className="space-y-3 sm:space-y-4 rounded-lg border border-gray-200 bg-white/60 p-4 sm:p-5 lg:border-0 lg:p-0 lg:bg-transparent">
           <h3 className="text-xl sm:text-2xl font-semibold">
-            Adobe — Associate Java Developer (Jan 2021 – Feb 2022)
+            Adobe — Associate Java Developer (Jan 2020 – Feb 2022)
           </h3>
           <p className="text-base sm:text-[17px] lg:text-lg leading-relaxed text-gray-800">
             At Adobe, I supported a digital media management platform that needed to be faster and more 

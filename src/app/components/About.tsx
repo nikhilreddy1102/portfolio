@@ -23,7 +23,7 @@ export default function About() {
         </h2>
 
         <p className="text-base sm:text-[17px] lg:text-lg leading-relaxed text-gray-800 text-left">
-          Over the past four years, I’ve designed and developed enterprise-grade
+          Over the past five years, I’ve designed and developed enterprise-grade
           <strong>{' '}microservices</strong>, <strong>APIs</strong>, and 
           <strong>{' '}responsive interfaces</strong> across industries such as
           <strong>{' '}banking, healthcare, and media</strong>. My expertise spans
