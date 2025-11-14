@@ -1,4 +1,5 @@
 import { Mail, Phone, Linkedin, Github, Download } from "lucide-react";
+import Link from "next/link";
 
 export default function Contact() {
   return (
@@ -29,26 +30,30 @@ export default function Contact() {
             <Phone size={18} /> Mobile
           </a>
           <a
-            href="https://www.linkedin.com/in/sj6038372a/"
+            href="https://www.linkedin.com/in/sj60383721a/"
             target="_blank"
+            rel="noopener"
             className="flex items-center gap-2 hover:opacity-80"
           >
             <Linkedin size={18} /> LinkedIn
           </a>
           <a
-            href="https://github.com/"
+            href="https://github.com/nikhilreddy1102"
             target="_blank"
+            rel="noopener"
             className="flex items-center gap-2 hover:opacity-80"
           >
             <Github size={18} /> GitHub
           </a>
-          <a
+          <Link
             href="/NikhilReddy_Resume.pdf"
+            target="_blank"
+            rel="noopener"
+            prefetch={false}
             className="flex items-center gap-2 hover:opacity-80"
-            download
           >
             <Download size={18} /> Resume
-          </a>
+          </Link>
 
           {/* Location (not clickable) */}
           <span className="flex items-center gap-2 cursor-default">

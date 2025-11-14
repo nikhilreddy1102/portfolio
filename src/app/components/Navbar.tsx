@@ -9,11 +9,11 @@ export default function Navbar() {
   const toggle = () => setOpen((s) => !s);
   const close = () => setOpen(false);
 
-  // NEW: refs to detect outside click
+  // refs to detect outside click
   const buttonRef = useRef<HTMLButtonElement | null>(null);
   const menuRef = useRef<HTMLDivElement | null>(null);
 
-  // NEW: close on outside click (mobile only)
+  // close on outside click (mobile only)
   useEffect(() => {
     function onPointerDown(e: PointerEvent) {
       if (!open) return;
@@ -38,23 +38,26 @@ export default function Navbar() {
           PORTFOLIO
         </Link>
 
-        {/* Desktop links (unchanged) */}
+        {/* Desktop links */}
         <div className="hidden lg:flex items-center gap-6 text-sm">
           <Link href="/about" className="hover:opacity-80 text-gray-300">About</Link>
           <Link href="/experience" className="hover:opacity-80 text-gray-300">Experience</Link>
           <Link href="/#projects" className="hover:opacity-80 text-gray-300">Projects</Link>
           <Link href="/#contact" className="hover:opacity-80 text-gray-300">Contact</Link>
-          <a
+          <Link
             href="/NikhilReddy_Resume.pdf"
+            prefetch={false}
+            target="_blank"
+            rel="noopener"
             className="flex items-center gap-2 rounded-md bg-white/10 text-gray-300 px-3 py-1.5 hover:bg-white/20"
           >
             <Download size={16} /> Resume
-          </a>
+          </Link>
         </div>
 
-        {/* Mobile hamburger (right-aligned) */}
+        {/* Mobile hamburger */}
         <button
-          ref={buttonRef}                      // NEW
+          ref={buttonRef}
           onClick={toggle}
           aria-expanded={open}
           aria-label="Open menu"
@@ -66,7 +69,7 @@ export default function Navbar() {
 
       {/* Mobile dropdown */}
       <div
-        ref={menuRef}                           // NEW
+        ref={menuRef}
         className={`lg:hidden overflow-hidden transition-[max-height] duration-300 ${
           open ? "max-h-96" : "max-h-0"
         }`}
@@ -77,15 +80,16 @@ export default function Navbar() {
             <Link href="/experience" onClick={close} className="block rounded-md px-3 py-2 text-gray-200 hover:bg-white/10">Experience</Link>
             <Link href="/#projects" onClick={close} className="block rounded-md px-3 py-2 text-gray-200 hover:bg-white/10">Projects</Link>
             <Link href="/#contact" onClick={close} className="block rounded-md px-3 py-2 text-gray-200 hover:bg-white/10">Contact</Link>
-            <a
+            <Link
               href="/NikhilReddy_Resume.pdf"
+              prefetch={false}
               target="_blank"
               rel="noopener"
               onClick={close}
               className="mt-1 flex items-center gap-2 rounded-md bg-white/10 text-gray-200 px-3 py-2 hover:bg-white/20"
             >
               <Download size={18} /> Resume
-            </a>
+            </Link>
           </div>
         </div>
       </div>

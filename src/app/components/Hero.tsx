@@ -1,4 +1,5 @@
 import { Mail } from "lucide-react";
+import Link from "next/link";
 import BackgroundSpotlight from "./BackgroundSpotlight";
 import Projects from "./Projects";
 import Contact from "./Contact";
@@ -6,7 +7,7 @@ import Contact from "./Contact";
 /* ✅ Circular badge */
 function CircularBadge() {
   return (
-    <a
+    <Link
       href="/experience"
       aria-label="Go to Experience"
       className="
@@ -16,21 +17,35 @@ function CircularBadge() {
       "
     >
       <svg viewBox="0 0 200 200" className="w-full h-full drop-shadow-[0_6px_20px_rgba(0,0,0,.35)]">
-        <circle cx="100" cy="100" r="84" className="fill-[rgba(255,255,255,0.06)] stroke-[rgba(255,255,255,0.25)]" strokeWidth="1.5" />
+        <circle
+          cx="100"
+          cy="100"
+          r="84"
+          className="fill-[rgba(255,255,255,0.06)] stroke-[rgba(255,255,255,0.25)]"
+          strokeWidth="1.5"
+        />
         <defs>
           <path id="expPath" d="M100,100 m-60,0 a60,60 0 1,1 120,0 a60,60 0 1,1 -120,0" />
         </defs>
         <g className="origin-center animate-[spin_12s_linear_infinite] group-hover:[animation-duration:6s]">
           <text fontSize="13" fontWeight="600" className="fill-white/80 tracking-[0.25em] uppercase">
-            <textPath href="#expPath" startOffset="0%">My Experience • My Experience •</textPath>
+            <textPath href="#expPath" startOffset="0%">
+              My Experience • My Experience •
+            </textPath>
           </text>
         </g>
         <g>
           <circle cx="100" cy="100" r="28" className="fill-white" />
-          <path d="M88 100 L112 100 M104 92 L112 100 L104 108" className="stroke-black" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+          <path
+            d="M88 100 L112 100 M104 92 L112 100 L104 108"
+            className="stroke-black"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         </g>
       </svg>
-    </a>
+    </Link>
   );
 }
 
@@ -52,20 +67,24 @@ export default function Hero() {
         "
       >
         {/* Left: text teaser */}
-        <div className="
+        <div
+          className="
           space-y-5 sm:space-y-6
           relative top-1 left-0
           lg:-top-80 lg:-left-10
-        ">
+        "
+        >
           <h1 className="text-2xl sm:text-3xl lg:text-5xl text-gray-300 font-bold leading-tight">
-            <a href="#about" className="cursor-pointer hover:opacity-80">Nikhil Reddy</a>
+            <a href="#about" className="cursor-pointer hover:opacity-80">
+              Nikhil Reddy
+            </a>
             <span className="block mt-2 text-gray-300 text-lg sm:text-xl lg:text-2xl font-medium">
               Software Developer • Java Full Stack Developer • Frontend Developer
             </span>
           </h1>
 
           <p className="text-gray-300 max-w-prose sm:max-w-xl text-sm sm:text-base">
-            I’m a Software Developer with 4+ years of experience building
+            I’m a Software Developer with 5+ years of experience building
             full-stack and cloud-native applications using Java, Spring Boot,
             React/Next.js, and AWS. With proven experience in Data Structures and Algorithms,
             I specialize in designing scalable microservices and secure APIs that perform under
