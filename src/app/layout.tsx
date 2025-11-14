@@ -4,6 +4,9 @@ import GlobalBackground from "./components/GlobalBackground";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
+// Only import ChatBubble, NOT ChatModal
+import ChatBubble from "./components/ChatBubble";
+
 export const metadata: Metadata = {
   title: "Portfolio",
 };
@@ -12,20 +15,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className="relative bg-transparent">
-        {/* One global background layer */}
         <GlobalBackground />
 
-        {/* Global UI */}
-        <div className="relative z-10 flex flex-col min-h-dvh">{/* was min-h-screen */}
-          {/* Navbar always at the top */}
+        <div className="relative z-10 flex flex-col min-h-dvh">
           <Navbar />
 
-          {/* Page content with padding to avoid overlapping sticky nav */}
-          {/* FIX: give main a real top padding matching your nav height (assume 64px / h-16) */}
-          <main className="flex-1 pt-0">{children}</main>{/* was flex-grow pt- */}
-          
-          {/* Footer always at the bottom */}
+          <main className="flex-1 pt-0">{children}</main>
+
           <Footer />
+
+          {/* Global floating chat button */}
+          <ChatBubble />
         </div>
       </body>
     </html>
