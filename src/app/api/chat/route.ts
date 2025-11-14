@@ -18,11 +18,11 @@ export async function POST(req: Request) {
         "Content-Type": "application/json",
         "api-key": apiKey,
       },
-body: JSON.stringify({
-  messages: [
-    {
-      role: "assistant",
-      content: `
+      body: JSON.stringify({
+        messages: [
+          {
+            role: "assistant",
+            content: `
 You are the personal AI assistant for Nikhil Reddy’s portfolio website.
 
 Your purpose is to help visitors understand Nikhil's:
@@ -44,21 +44,23 @@ Other: Stripe, PayPal, JWT Auth, LMS, Kafka basics
 
 Always answer using this information. If unsure, say “Nikhil has not provided that information yet.”
 `
-    },
-    ...messages
-  ],
-  max_completion_tokens: 1024
-})
+          },
+          ...messages
+        ],
+        max_completion_tokens: 1024
+      }),
     });
 
     const data = await response.text();
     console.log("AZURE RAW RESPONSE:", data);
 
     return NextResponse.json(JSON.parse(data));
-  } catch (error: any) {
-    console.error("Chat API error:", error);
+
+  } catch (error) {
+    const err = error instanceof Error ? error.message : String(error);
+    console.error("Chat API error:", err);
     return NextResponse.json(
-      { error: "Chat API failed", details: String(error) },
+      { error: "Chat API failed", details: err },
       { status: 500 }
     );
   }
