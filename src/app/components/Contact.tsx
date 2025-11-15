@@ -46,7 +46,7 @@ export default function Contact() {
             <Github size={18} /> GitHub
           </a>
           <Link
-            href="/NikhilReddy_Resume.pdf"
+            href="/K_Nikhil_Reddy_Resume.pdf"
             target="_blank"
             rel="noopener"
             prefetch={false}

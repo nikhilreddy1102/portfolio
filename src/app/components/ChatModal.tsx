@@ -15,73 +15,91 @@ interface ChatMessage {
 export default function ChatModal({ onClose }: ChatModalProps) {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
-  const scrollRef = useRef<HTMLDivElement | null>(null);
+  const [isTyping, setIsTyping] = useState(false);
 
-  // Auto scroll: ALWAYS go to exact TOP of latest message
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+  const modalRef = useRef<HTMLDivElement | null>(null);
+
+  // Close when clicking outside modal
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
+        onClose();
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () =>
+      document.removeEventListener("mousedown", handleClickOutside);
+  }, [onClose]);
+
+  // Auto scroll to bottom on new messages or typing indicator
   useEffect(() => {
     const container = scrollRef.current;
     if (!container) return;
 
-    const lastMessage = container.querySelector(
-      ".chat-msg:last-child"
-    ) as HTMLElement | null;
-
-    if (!lastMessage) return;
-
     container.scrollTo({
-      top: lastMessage.offsetTop,
+      top: container.scrollHeight,
       behavior: "smooth",
     });
-  }, [messages]);
-
-  // When modal opens
-  useEffect(() => {
-    const container = scrollRef.current;
-    if (container) container.scrollTop = container.scrollHeight;
-  }, []);
+  }, [messages, isTyping]);
 
   const sendMessage = async () => {
     if (!input.trim()) return;
 
     const updatedMessages: ChatMessage[] = [
       ...messages,
-      { role: "user", content: input }
+      { role: "user", content: input },
     ];
 
     setMessages(updatedMessages);
     setInput("");
+    setIsTyping(true);
 
     try {
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: updatedMessages })
+        body: JSON.stringify({ messages: updatedMessages }),
       });
 
       const data = await res.json();
-      const reply =
-        data?.choices?.[0]?.message?.content || "No response.";
+      const reply = data?.reply || "No response.";
 
       setMessages([
         ...updatedMessages,
-        { role: "assistant", content: reply }
+        { role: "assistant", content: reply },
       ]);
     } catch {
       setMessages([
         ...updatedMessages,
-        { role: "assistant", content: "Error connecting to server." }
+        {
+          role: "assistant",
+          content: "Error connecting to server.",
+        },
       ]);
     }
+
+    setIsTyping(false);
   };
 
   return (
-    <div className="fixed bottom-20 right-6 z-50">
-      <div className="bg-white rounded-xl shadow-2xl w-[350px] h-[480px] flex flex-col overflow-hidden animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex justify-end items-end pointer-events-auto">
+      {/* CLICK-OUTSIDE OVERLAY */}
+      <div className="absolute inset-0 bg-black/10" />
 
+      {/* CHAT BOX */}
+      <div
+        ref={modalRef}
+        className="relative bg-white rounded-xl shadow-2xl w-[350px] h-[480px] flex flex-col overflow-hidden m-6 animate-fadeIn z-50"
+      >
         {/* HEADER */}
         <div className="flex items-center justify-between p-3 border-b">
           <h2 className="text-base font-semibold">Chat with Nikhil’s AI</h2>
-          <button onClick={onClose} className="text-gray-500 hover:text-black">
+          <button
+            onClick={onClose}
+            className="text-gray-500 hover:text-black"
+          >
             <X size={20} />
           </button>
         </div>
@@ -89,7 +107,7 @@ export default function ChatModal({ onClose }: ChatModalProps) {
         {/* MESSAGES */}
         <div
           ref={scrollRef}
-          className="flex-1 overflow-y-auto space-y-3 px-3 pb-3"
+          className="flex-1 overflow-y-auto space-y-3 px-3 pb-3 scroll-smooth"
         >
           {messages.length === 0 && (
             <p className="text-gray-500 text-sm">
@@ -109,6 +127,15 @@ export default function ChatModal({ onClose }: ChatModalProps) {
               {m.content}
             </div>
           ))}
+
+          {/* TYPING INDICATOR */}
+          {isTyping && (
+            <div className="flex items-center gap-2 pl-1">
+              <div className="typing-dot bg-gray-400"></div>
+              <div className="typing-dot bg-gray-400"></div>
+              <div className="typing-dot bg-gray-400"></div>
+            </div>
+          )}
         </div>
 
         {/* INPUT */}
@@ -127,8 +154,37 @@ export default function ChatModal({ onClose }: ChatModalProps) {
             Send
           </button>
         </div>
-
       </div>
+
+      {/* CSS FOR TYPING ANIMATION */}
+      <style jsx>{`
+        .typing-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          animation: blink 1.4s infinite both;
+        }
+        .typing-dot:nth-child(2) {
+          animation-delay: 0.2s;
+        }
+        .typing-dot:nth-child(3) {
+          animation-delay: 0.4s;
+        }
+        @keyframes blink {
+          0% {
+            opacity: 0.2;
+            transform: translateY(0);
+          }
+          50% {
+            opacity: 1;
+            transform: translateY(-2px);
+          }
+          100% {
+            opacity: 0.2;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </div>
   );
 }
