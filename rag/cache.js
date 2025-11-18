@@ -1,23 +1,20 @@
 // rag/cache.js
 
-const fs = require("fs");
-const path = require("path");
+// In-memory cache only – safe for Vercel serverless
+const cache = {};
 
-const CACHE_PATH = path.join(process.cwd(), "rag", "queryCache.json");
-
-// Load query cache
-let cache = {};
-if (fs.existsSync(CACHE_PATH)) {
-  cache = JSON.parse(fs.readFileSync(CACHE_PATH, "utf8"));
-}
-
+/**
+ * Get embedding from cache for a given query.
+ */
 function getCachedEmbedding(query) {
   return cache[query];
 }
 
+/**
+ * Save embedding in memory. No filesystem writes.
+ */
 function saveCachedEmbedding(query, embedding) {
   cache[query] = embedding;
-  fs.writeFileSync(CACHE_PATH, JSON.stringify(cache, null, 2), "utf8");
 }
 
 module.exports = {
