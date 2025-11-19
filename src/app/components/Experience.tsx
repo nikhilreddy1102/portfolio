@@ -19,26 +19,36 @@ export default function Experience() {
         {/* Example Job 1 */}
         <div className="space-y-3 sm:space-y-4 rounded-lg border border-gray-200 bg-white/60 p-4 sm:p-5 lg:border-0 lg:p-0 lg:bg-transparent">
           <h3 className="text-xl sm:text-2xl font-semibold">
-            CodeLance IT — Software Developer (Jan 2024 – Present)
+            Ethics Consulting Partners - Software Developer (Feb 2025 – Present)
           </h3>
           <p className="text-base sm:text-[17px] lg:text-lg leading-relaxed text-gray-800">
-            When I joined CodeLance IT, there I worked on the banking transaction platform which was 
-            struggling with security gaps and instability during peak transaction hours and also access 
-            permission model was error-prone, which created risks of privilege escalation, and high-volume 
-            traffic often strained system performance. To address this, I designed and deployed scalable 
-            microservices with Spring Boot and Kafka to decouple workflows, and I implemented graph-based 
-            validation logic to trace user-role relationships, eliminating hidden vulnerabilities. 
-            I reinforced security with OAuth2 and JWT, containerized deployments on AWS EKS, and automated 
-            CI/CD pipelines through GitHub Actions and Jenkins. These combined improvements brought the platform 
-            to 99.95% availability, cut misconfiguration issues by 30%, boosted scalability by nearly 40% during 
-            heavy loads, and shortened release cycles from three days to under six hours.
-          </p>
+  At Ethics Consulting Partners (ECP), I am responsible for designing and building large-scale
+  full-stack features across both the Corporate Training platform and the Promo Store. I developed
+  the front-end architecture from scratch using <strong>Next.js, TypeScript,</strong> and
+  <strong> Tailwind CSS</strong>, transforming Figma designs into high-performance,
+  responsive interfaces used by enterprise clients. On the backend, I built secure
+  <strong> NestJS</strong> services handling authentication, B2B configurations, product catalogs,
+  user management, and LMS integrations.
+  <br /><br />
+  I integrated the <strong>Absorb LMS</strong> through REST APIs to synchronize courses, enable
+  SSO, and automate learner progress tracking, while also implementing secure payment gateways -
+  <strong>Authorize.net</strong> for LMS transactions and <strong>Stripe</strong> for the Promo Store.
+  This included building a fully scalable cart and checkout system with Zustand and ensuring PCI-compliant flows.
+  <br /><br />
+  I also introduced <strong>AI capabilities</strong> into the platform by developing an in-product
+  chatbot using <strong>Anthropic Claude</strong> and optimized search and personalization logic to
+  improve course and product discoverability. Additionally, I automated CI/CD pipelines using
+  <strong> GitHub Actions and Docker</strong>, implemented Nginx-based production hosting for
+  high availability, and improved performance across both platforms through intelligent caching,
+  optimized queries, and modular service design.
+</p>
+
         </div>
 
         {/* Example Job 2 */}
         <div className="space-y-3 sm:space-y-4 rounded-lg border border-gray-200 bg-white/60 p-4 sm:p-5 lg:border-0 lg:p-0 lg:bg-transparent">
           <h3 className="text-xl sm:text-2xl font-semibold">
-            Cognizant — Full Stack Java Developer (Feb 2022 – Jun 2023)
+            Cognizant  - Developer (Feb 2022 – Jun 2023)
           </h3>
           <p className="text-base sm:text-[17px] lg:text-lg leading-relaxed text-gray-800">
             At Cognizant, I worked on healthcare applications where clinicians often struggled with 
@@ -56,7 +66,7 @@ export default function Experience() {
         {/* Example Job 3 */}
         <div className="space-y-3 sm:space-y-4 rounded-lg border border-gray-200 bg-white/60 p-4 sm:p-5 lg:border-0 lg:p-0 lg:bg-transparent">
           <h3 className="text-xl sm:text-2xl font-semibold">
-            Adobe — Associate Java Developer (Jan 2020 – Feb 2022)
+            Adobe - Associate Java Developer (Jan 2020 – Feb 2022)
           </h3>
           <p className="text-base sm:text-[17px] lg:text-lg leading-relaxed text-gray-800">
             At Adobe, I supported a digital media management platform that needed to be faster and more 

@@ -45,7 +45,7 @@ export default function Navbar() {
           <Link href="/#projects" className="hover:opacity-80 text-gray-300">Projects</Link>
           <Link href="/#contact" className="hover:opacity-80 text-gray-300">Contact</Link>
           <Link
-            href="/NikhilReddy_Resume.pdf"
+            href="/nikhil_reddy.pdf"
             prefetch={false}
             target="_blank"
             rel="noopener"
@@ -80,16 +80,16 @@ export default function Navbar() {
             <Link href="/experience" onClick={close} className="block rounded-md px-3 py-2 text-gray-200 hover:bg-white/10">Experience</Link>
             <Link href="/#projects" onClick={close} className="block rounded-md px-3 py-2 text-gray-200 hover:bg-white/10">Projects</Link>
             <Link href="/#contact" onClick={close} className="block rounded-md px-3 py-2 text-gray-200 hover:bg-white/10">Contact</Link>
-            <Link
-              href="/K_Nikhil_Reddy_Resume.pdf"
-              prefetch={false}
-              target="_blank"
-              rel="noopener"
-              onClick={close}
-              className="mt-1 flex items-center gap-2 rounded-md bg-white/10 text-gray-200 px-3 py-2 hover:bg-white/20"
-            >
-              <Download size={18} /> Resume
-            </Link>
+            <a
+  href="/nikhil_reddy"
+  target="_blank"
+  rel="noopener noreferrer"
+  onClick={close}
+  className="mt-1 flex items-center gap-2 rounded-md bg-white/10 text-gray-200 px-3 py-2 hover:bg-white/20"
+>
+  <Download size={18} /> Resume
+</a>
+
           </div>
         </div>
       </div>

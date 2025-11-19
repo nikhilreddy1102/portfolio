@@ -45,15 +45,15 @@ export default function Contact() {
           >
             <Github size={18} /> GitHub
           </a>
-          <Link
-            href="/K_Nikhil_Reddy_Resume.pdf"
-            target="_blank"
-            rel="noopener"
-            prefetch={false}
-            className="flex items-center gap-2 hover:opacity-80"
-          >
-            <Download size={18} /> Resume
-          </Link>
+          <a
+  href="/nikhil_reddy.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-2 hover:opacity-80"
+>
+  <Download size={18} /> Resume
+</a>
+
 
           {/* Location (not clickable) */}
           <span className="flex items-center gap-2 cursor-default">
