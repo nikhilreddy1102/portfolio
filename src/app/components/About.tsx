@@ -23,35 +23,39 @@ export default function About() {
         </h2>
 
         <p className="text-base sm:text-[17px] lg:text-lg leading-relaxed text-gray-800 text-left">
-          Over the past five years, I’ve designed and developed enterprise-grade
-          <strong>{' '}microservices</strong>, <strong>APIs</strong>, and 
-          <strong>{' '}responsive interfaces</strong> across industries such as
-          <strong>{' '}banking, healthcare, and media</strong>. My expertise spans
-          <strong>{' '}Java (8–17), Spring Boot,</strong> and <strong>distributed systems</strong> 
-          on the backend, and <strong>React/Next.js</strong> with 
-          <strong>{' '}Tailwind CSS</strong> on the frontend, all deployed through
-          <strong>{' '}CI/CD pipelines</strong> on AWS and Azure.
+          Over the past years, I’ve grown from building enterprise-grade microservices
+          and scalable backend systems to architecting intelligent AI-driven applications.
+          Alongside designing secure distributed systems using <strong>Java, Spring Boot,
+          NestJS</strong>, and messaging platforms like <strong>Kafka</strong>, I’ve developed
+          high-performance front-end experiences with <strong>Next.js, TypeScript,</strong> and
+          <strong> Tailwind CSS</strong> for large e-commerce and training platforms.
         </p>
 
         <p className="text-base sm:text-[17px] lg:text-lg leading-relaxed text-gray-800 text-left">
-          I’ve implemented secure architectures with <strong>OAuth2</strong>, 
-          <strong>{' '}JWT</strong>, and <strong>Kafka</strong> for real-time messaging,
-          while containerizing applications with <strong>Docker</strong> and 
-          <strong>{' '}Kubernetes</strong> to ensure high availability.
+          My recent work expands into <strong>AI agent development</strong> - building LLM-powered
+          assistants using <strong>Azure OpenAI</strong> and <strong>Anthropic Claude</strong>,
+          creating real-time streaming chat interfaces, and implementing
+          <strong> Retrieval-Augmented Generation (RAG)</strong> pipelines with vector
+          embeddings and custom data indexing. I also engineer secure serverless workflows,
+          optimized prompts, and low-latency inference to ensure reliable AI-powered
+          interactions across platforms.
         </p>
 
         <p className="text-base sm:text-[17px] lg:text-lg leading-relaxed text-gray-800 text-left">
-          With proven experience in <strong>Data Structures and Algorithms</strong>,
-          I apply graph-based models, optimization techniques, and efficient query
-          strategies to improve performance and stability.
+          Beyond architecture and backend engineering, I enjoy connecting design,
+          performance, and AI automation to build intuitive, scalable, user-focused products.
+          I’ve worked extensively with <strong>Docker, Kubernetes, OAuth2, JWT</strong>,
+          distributed caching, and CI/CD pipelines to deliver fault-tolerant, cloud-native
+          applications across AWS and Azure.
         </p>
 
         <p className="text-base sm:text-[17px] lg:text-lg leading-relaxed text-gray-800 text-left">
-          Experienced in <strong>agile delivery</strong> and
-          <strong>{' '}cross-functional collaboration</strong>, I’m passionate about
-          roles that challenge me to architect scalable microservices, optimize
-          performance, and create engaging user experiences in full-stack or
-          frontend engineering.
+          Apart from my professional experience, I hold a
+          <strong> Master’s degree in Computer & Information Systems</strong> from
+          <strong> Saint Louis University</strong>, where I completed coursework in
+          applied analytics, information retrieval, enterprise architecture, and
+          advanced software development — strengthening both my engineering foundations
+          and my understanding of modern AI-driven systems.
         </p>
       </div>
     </section>

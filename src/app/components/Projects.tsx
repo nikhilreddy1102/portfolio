@@ -3,19 +3,41 @@ import { useState } from "react";
 
 const projects = [
   {
-    title: "EC Partners Training",
-    description: "Corporate training platform for scalable learning. URL: theecp.com",
-    details: `The challenge was to build a scalable corporate training platform that 
-    could deliver courses, resources, and learning paths seamlessly across devices. To 
-    achieve this, I transformed Figma designs into responsive and modular components using Next.js 
-    and Tailwind CSS, and set up CI/CD pipelines for continuous delivery and updates. By optimizing 
-    performance and focusing on enterprise-ready scalability, I created a platform that not only supported 
-    flexible training delivery but also enabled faster iteration cycles, reliable deployments, and a smooth
-     rollout for corporate adoption.`,
-  },
+  title: "AI-Powered Portfolio Assistant",
+  description:
+    "A personal portfolio enhanced with a real-time AI agent using Azure OpenAI, custom embeddings and RAG.",
+  details: `The goal of this project was to build a fully interactive developer portfolio 
+  with an intelligent AI assistant capable of answering both general queries and 
+  deeply contextual, skill-based questions about my background, projects, and tech stack.
+  I built the entire platform using Next.js, TypeScript and Tailwind CSS, creating 
+  modular UI components, serverless API routes, and a real-time streaming chat interface 
+  inspired by modern LLM application design.
+
+  To enable accurate and personalized responses, I implemented a Retrieval-Augmented 
+  Generation (RAG) pipeline. I structured my resume and project metadata into JSON, created 
+  text chunks, and generated embeddings using Azure OpenAI’s “text-embedding-3-large” model. 
+  These embeddings were stored in a vector index and queried dynamically during chat to 
+  retrieve the most relevant context before sending prompts to the LLM. This significantly 
+  improved answer precision and allowed the agent to reference specific experience, tools, 
+  and technical achievements without hallucination.
+
+  The AI agent supports two modes of intelligence:
+  1) General language reasoning for open-ended queries, career advice, and basic conversation.
+  2) Skill-based, context-aware responses generated through RAG, enabling the model to 
+     describe my microservices work, cloud projects, frontend architecture decisions, 
+     and domain expertise with high accuracy.
+
+  On the backend, I used serverless functions with secure Azure environment isolation, 
+  implemented streaming token responses for a smooth chat UX, and optimized prompt 
+  engineering to merge retrieved context with model instructions. By combining LLM 
+  reasoning, vector search, embeddings, and a highly modular UI, this project demonstrates 
+  how modern AI systems can be integrated into personal applications to create an 
+  intelligent, developer-focused experience.`
+}
+,
   {
     title: "Integrated Healthcare Data Security System (Research Project)",
-    description: "Smart security for sensitive healthcare data—compliant, encrypted, and resilient.",
+    description: "Smart security for sensitive healthcare data-compliant, encrypted, and resilient.",
     details: `During my Master’s program, I led a research project aimed at addressing the 
     challenge of securing sensitive healthcare data while complying with HIPAA standards. 
     I designed a secure database prototype with AES-256 and TLS 1.3 encryption, integrated 

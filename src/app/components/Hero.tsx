@@ -84,13 +84,17 @@ export default function Hero() {
           </h1>
 
           <p className="text-gray-300 max-w-prose sm:max-w-xl text-sm sm:text-base">
-            I’m a Software Developer with 5+ years of experience building
-            full-stack and cloud-native applications using Java, Spring Boot,
-            React/Next.js, and AWS. With proven experience in Data Structures and Algorithms,
-            I specialize in designing scalable microservices and secure APIs that perform under
-            high demand. I’m now seeking opportunities as a Software Developer,
-            Java Full Stack Engineer, or React/Frontend Developer to continue creating impactful systems.
-          </p>
+  I’m a Software Developer experienced in building scalable full-stack and cloud-native
+  applications using Java, Spring Boot, React, Next.js, and AWS. I specialize in designing
+  distributed microservices, secure APIs, and high-performance user interfaces backed by
+  strong fundamentals in Data Structures and Algorithms. My recent work also includes
+  developing LLM-powered AI agents, integrating Azure OpenAI and Anthropic models, and
+  implementing RAG pipelines with embeddings and vector search to enable intelligent,
+  context-aware interactions. I’m now seeking opportunities as a Software Developer, Java
+  Full Stack Engineer, or React/Frontend Developer to continue creating impactful,
+  engineering-driven systems.
+</p>
+
 
           {/* Social */}
           <div className="flex flex-wrap gap-3">
@@ -109,12 +113,60 @@ export default function Hero() {
         </div>
 
         {/* Right: visual box (responsive heights) */}
-        <div
-          className="
-            h-56 sm:h-72 md:h-96 lg:h-[520px]
-            rounded-2xl border border-white/10 bg-white/[0.02]
-          "
-        />
+      <div
+  className="
+    rounded-2xl border border-white/10 bg-white/[0.02]
+    p-6 sm:p-8 flex flex-col gap-4
+    w-full
+  "
+>
+  <h3 className="text-lg sm:text-xl font-semibold text-gray-200 mb-2 text-center">
+    Tech Stack
+  </h3>
+
+  <div
+    className="
+      grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm text-gray-300
+      place-items-center
+    "
+  >
+    {/* Backend */}
+    <span className="px-3 py-1">Java</span>
+    <span className="px-3 py-1">Spring Boot</span>
+    <span className="px-3 py-1">Microservices</span>
+    <span className="px-3 py-1">Kafka</span>
+    <span className="px-3 py-1">Redis</span>
+    <span className="px-3 py-1">PostgreSQL</span>
+    <span className="px-3 py-1">MongoDB</span>
+
+    {/* Frontend */}
+    <span className="px-3 py-1">React</span>
+    <span className="px-3 py-1">Next.js</span>
+    <span className="px-3 py-1">TypeScript</span>
+    <span className="px-3 py-1">Tailwind CSS</span>
+
+    {/* Cloud / DevOps */}
+    <span className="px-3 py-1">AWS</span>
+    <span className="px-3 py-1">Docker</span>
+    <span className="px-3 py-1">Kubernetes</span>
+    <span className="px-3 py-1">GitHub Actions</span>
+
+    {/* AI / LLM */}
+    <span className="px-3 py-1">Azure OpenAI</span>
+    <span className="px-3 py-1">Claude</span>
+    <span className="px-3 py-1">RAG Pipeline</span>
+    <span className="px-3 py-1">Embeddings</span>
+    <span className="px-3 py-1">Prompt Eng.</span>
+    <span className="px-3 py-1">Serverless</span>
+
+    {/* Tools */}
+    <span className="px-3 py-1">Git</span>
+    <span className="px-3 py-1">Nginx</span>
+    <span className="px-3 py-1">Figma</span>
+  </div>
+</div>
+
+
       </div>
 
       {/* 💻 Floating badge (desktop only) */}
