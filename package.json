@@ -17,6 +17,7 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-tsparticles": "^2.8.0",
+    "resend": "^6.6.0",
     "tsparticles": "^2.11.1"
   },
   "devDependencies": {

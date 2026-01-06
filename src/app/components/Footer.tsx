@@ -22,6 +22,11 @@ export default function Footer() {
             Tailwind CSS
           </a>
         </span>
+
+        {/* Subtle privacy notice */}
+        <p className="mt-2 text-[10px] sm:text-xs text-gray-500">
+          Privacy: This site logs basic anonymous visit metadata for security.
+        </p>
       </div>
     </footer>
   );
