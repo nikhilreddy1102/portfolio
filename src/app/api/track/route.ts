@@ -11,9 +11,11 @@ function getClientIp(req: NextRequest) {
   const realIp = req.headers.get("x-real-ip");
   if (realIp) return realIp;
 
-  // Fallback (may be undefined depending on platform/runtime)
-  // @ts-ignore
-  return req.ip || "unknown";
+  // NextRequest doesn't always expose `ip` in types/runtime.
+  // Use a safe, typed access without @ts-ignore.
+  const ip = (req as unknown as { ip?: string }).ip;
+
+  return ip || "unknown";
 }
 
 // Optional: simple UA normalization (Chrome UA contains "Safari/...")
@@ -34,8 +36,11 @@ const seen = new Map<string, number>();
 
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json().catch(() => ({}));
-    const path = typeof body?.path === "string" ? body.path : "unknown";
+    const body: unknown = await req.json().catch(() => ({}));
+    const path =
+      typeof (body as { path?: unknown })?.path === "string"
+        ? ((body as { path: string }).path as string)
+        : "unknown";
 
     const ip = getClientIp(req);
 
@@ -68,7 +73,8 @@ export async function POST(req: NextRequest) {
     const apiKey = process.env.RESEND_API_KEY;
     const toEmail = process.env.ALERT_TO_EMAIL;
     const fromEmail =
-      process.env.ALERT_FROM_EMAIL || "Portfolio Alerts <onboarding@resend.dev>";
+      process.env.ALERT_FROM_EMAIL ||
+      "Portfolio Alerts <onboarding@resend.dev>";
 
     if (!apiKey) {
       return NextResponse.json(
@@ -103,7 +109,8 @@ export async function POST(req: NextRequest) {
     });
 
     return NextResponse.json({ ok: true });
-  } catch (err) {
+  } catch {
+    // no unused `err` variable -> ESLint passes
     return NextResponse.json(
       { ok: false, error: "Server error while tracking" },
       { status: 500 }
