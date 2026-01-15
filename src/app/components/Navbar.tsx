@@ -45,7 +45,7 @@ export default function Navbar() {
           <Link href="/#projects" className="hover:opacity-80 text-gray-300">Projects</Link>
           <Link href="/#contact" className="hover:opacity-80 text-gray-300">Contact</Link>
           <Link
-            href="/nikhil_reddy.pdf"
+            href="/knikhil_reddy.pdf"
             prefetch={false}
             target="_blank"
             rel="noopener"
@@ -81,7 +81,7 @@ export default function Navbar() {
             <Link href="/#projects" onClick={close} className="block rounded-md px-3 py-2 text-gray-200 hover:bg-white/10">Projects</Link>
             <Link href="/#contact" onClick={close} className="block rounded-md px-3 py-2 text-gray-200 hover:bg-white/10">Contact</Link>
             <a
-  href="/nikhil_reddy"
+  href="/knikhil_reddy"
   target="_blank"
   rel="noopener noreferrer"
   onClick={close}

@@ -46,7 +46,7 @@ export default function Contact() {
             <Github size={18} /> GitHub
           </a>
           <a
-  href="/nikhil_reddy.pdf"
+  href="/knikhil_reddy.pdf"
   target="_blank"
   rel="noopener noreferrer"
   className="flex items-center gap-2 hover:opacity-80"
