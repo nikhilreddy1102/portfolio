@@ -2,51 +2,44 @@
 import { useState } from "react";
 
 const projects = [
+ 
   {
-  title: "AI-Powered Portfolio Assistant",
-  description:
-    "A personal portfolio enhanced with a real-time AI agent using Azure OpenAI, custom embeddings and RAG.",
-  details: `The goal of this project was to build a fully interactive developer portfolio 
-  with an intelligent AI assistant capable of answering both general queries and 
-  deeply contextual, skill-based questions about my background, projects, and tech stack.
-  I built the entire platform using Next.js, TypeScript and Tailwind CSS, creating 
-  modular UI components, serverless API routes, and a real-time streaming chat interface 
-  inspired by modern LLM application design.
+    title: "AI-Powered Portfolio Assistant",
+    description:
+      "A personal portfolio enhanced with a real-time AI agent using Azure OpenAI, custom embeddings and RAG.",
+    details: `I built this project to turn a standard developer portfolio into an interactive site with an AI assistant that can handle both casual questions and deeply contextual, skill based questions about my background, projects, and tech stack. Instead of a static page, the portfolio behaves like a product experience where visitors can explore my work and immediately get clear, accurate explanations of what I have built, how I built it, and why specific technical decisions were made.
 
-  To enable accurate and personalized responses, I implemented a Retrieval-Augmented 
-  Generation (RAG) pipeline. I structured my resume and project metadata into JSON, created 
-  text chunks, and generated embeddings using Azure OpenAI’s “text-embedding-3-large” model. 
-  These embeddings were stored in a vector index and queried dynamically during chat to 
-  retrieve the most relevant context before sending prompts to the LLM. This significantly 
-  improved answer precision and allowed the agent to reference specific experience, tools, 
-  and technical achievements without hallucination.
+The platform is built with Next.js, TypeScript, and Tailwind CSS, with modular UI components connected to serverless API routes that power the assistant. The chat experience is real time and streaming, so responses appear smoothly as tokens are generated rather than showing a delayed block of text. This makes the assistant feel like a first class feature of the portfolio and keeps the UX modern and fast.
 
-  The AI agent supports two modes of intelligence:
-  1) General language reasoning for open-ended queries, career advice, and basic conversation.
-  2) Skill-based, context-aware responses generated through RAG, enabling the model to 
-     describe my microservices work, cloud projects, frontend architecture decisions, 
-     and domain expertise with high accuracy.
+To ensure accuracy and personalization, I implemented a Retrieval Augmented Generation pipeline. I structured resume and project metadata into JSON, chunked the content, generated embeddings using Azure OpenAI’s text embedding 3 large model, and stored them in a vector index for similarity search. At query time, the system retrieves the most relevant context and injects it into prompts before calling the LLM, enabling grounded answers that reference specific skills, tools, and achievements with reduced hallucination risk.`,
+  },
 
-  On the backend, I used serverless functions with secure Azure environment isolation, 
-  implemented streaming token responses for a smooth chat UX, and optimized prompt 
-  engineering to merge retrieved context with model instructions. By combining LLM 
-  reasoning, vector search, embeddings, and a highly modular UI, this project demonstrates 
-  how modern AI systems can be integrated into personal applications to create an 
-  intelligent, developer-focused experience.`
-}
-,
+ 
+  {
+    title: "Agent Tina (Agentic AI Career Intelligence Platform)",
+    description:
+      "An actively developed multi-agent GenAI system using RAG and semantic search for ATS-aware resume–job matching.",
+    details: `Agent Tina is an actively developed agentic AI system built to address a real and persistent problem in modern hiring: job matching is still driven by keyword filters, static ATS rules, and manual review. This approach regularly misses qualified candidates, provides little insight into why profiles fail ATS screening, and forces both recruiters and candidates to rely on trial-and-error. The result is inefficient hiring, poor transparency, and limited visibility into actual skill gaps or market alignment.
+
+To solve this, I am building Agent Tina as a multi-agent, Retrieval-Augmented Generation (RAG) platform that continuously discovers job postings, understands resumes and job descriptions semantically, and produces explainable, ATS-aware matching insights. Instead of a single monolithic model, the system is designed around specialized AI agents that independently parse resumes, normalize job data from public sources, perform semantic matching, evaluate ATS-aligned fit signals, identify skill gaps, and remove duplicates across sources. Each insight generated by the system is grounded in retrieved evidence from vector search, ensuring reliability and reducing hallucination.
+
+The project is being developed as a full-stack, production-oriented system rather than a demo. Current work focuses on building and hardening ingestion pipelines, improving retrieval quality and ranking logic, and adding validation and grounding guardrails to ensure consistent, explainable outputs. Agent Tina demonstrates my ability to design and implement agentic AI systems that combine reasoning, retrieval, and real-world constraints to solve complex problems in a scalable and maintainable way.`,
+  },
+
+  
   {
     title: "Integrated Healthcare Data Security System (Research Project)",
-    description: "Smart security for sensitive healthcare data-compliant, encrypted, and resilient.",
+    description:
+      "Smart security for sensitive healthcare data-compliant, encrypted, and resilient.",
     details: `During my Master’s program, I led a research project aimed at addressing the 
-    challenge of securing sensitive healthcare data while complying with HIPAA standards. 
-    I designed a secure database prototype with AES-256 and TLS 1.3 encryption, integrated 
-    role-based and attribute-based access control and applied graph-based algorithms to resolve 
-    complex user permission hierarchies. To further strengthen the system, I implemented real-time 
-    audit logging and anomaly detection using behavioral analytics. This project demonstrated how a 
-    carefully engineered system can safeguard patient data, prevent unauthorized access and detect potential
-     threats in real time, also proving the feasibility of combining strong cryptography with intelligent 
-     monitoring for healthcare security.`,
+challenge of securing sensitive healthcare data while complying with HIPAA standards. 
+I designed a secure database prototype with AES-256 and TLS 1.3 encryption, integrated 
+role-based and attribute-based access control and applied graph-based algorithms to resolve 
+complex user permission hierarchies. To further strengthen the system, I implemented real-time 
+audit logging and anomaly detection using behavioral analytics. This project demonstrated how a 
+carefully engineered system can safeguard patient data, prevent unauthorized access and detect potential
+threats in real time, also proving the feasibility of combining strong cryptography with intelligent 
+monitoring for healthcare security.`,
   },
 ];
 
@@ -88,10 +81,15 @@ export default function Projects() {
               >
                 ✕
               </button>
+
               <h3 className="text-2xl font-bold mb-4">
                 {projects[active].title}
               </h3>
-              <p className="leading-relaxed">{projects[active].details}</p>
+
+              
+              <p className="leading-relaxed whitespace-pre-line">
+                {projects[active].details}
+              </p>
             </div>
           </div>
         )}

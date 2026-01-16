@@ -18,7 +18,7 @@ export default function Contact() {
         {/* Links Row */}
         <div className="flex flex-wrap justify-center gap-8 text-base font-medium">
           <a
-            href="mailto:nikhilkothapally.reddy@gmail.com"
+            href="mailto:knikhilreddy2001@gmail.com"
             className="flex items-center gap-2 hover:opacity-80"
           >
             <Mail size={18} /> Email
