@@ -1,5 +1,15 @@
 [
   {
+  "id": "contact-1",
+  "section": "Contact",
+  "content": "Email: knikhilreddy2001@gmail.com"
+},
+{
+  "id": "contact-2",
+  "section": "Contact",
+  "content": "Phone: +1(737) 396-6514"
+},
+{
     "id": "summary-1",
     "section": "Professional Summary",
     "content": "Senior Java Developer with over 5 years of experience designing and implementing enterprise-grade, cloud-native applications across E-commerce, healthcare, and media domains. Built and integrated secure international payment terminals for ECP website using Authorize.net and Stripe, enabling seamless global e-commerce transactions. Experienced in applying data structures and algorithms including sorting, searching, hashing, and index bucketing to optimize performance and data processing efficiency."
@@ -143,5 +153,31 @@
     "id": "certifications-1",
     "section": "Certifications",
     "content": "AWS Certified Developer – Associate (DVA-C02)."
-  }
+  },
+  {
+  "id": "proj-agenttina-1",
+  "section": "Projects - Agent Tina (AI Job Matching & Resume Analysis Agent)",
+  "content": "Problem: Traditional job platforms rely on keyword matching and static filters. This leads to missed matches, weak ATS alignment signals, and low visibility into skill gaps."
+},
+{
+  "id": "proj-agenttina-2",
+  "section": "Projects - Agent Tina (AI Job Matching & Resume Analysis Agent)",
+  "content": "Solution: Built Agent Tina to actively discover jobs from public sources (company career pages and Greenhouse-powered listings), understand resumes and job descriptions semantically, and generate explainable match results with clear fit reasoning."
+},
+{
+  "id": "proj-agenttina-3",
+  "section": "Projects - Agent Tina (Agentic AI Architecture)",
+  "content": "Agentic AI architecture: Resume Parser Agent (structured candidate profile), Job Parser Agent (normalized job schema), Matching Agent (semantic ranking), ATS Scoring Agent (ATS-aligned fit signals), Skill Gap Agent (missing or weak skills), Dedup Agent (removes duplicate postings)."
+},
+{
+  "id": "proj-agenttina-4",
+  "section": "Projects - Agent Tina (RAG & Retrieval)",
+  "content": "RAG grounding: Jobs and resumes are embedded and stored in a vector database. At query time, relevant context is retrieved and injected into prompts so outputs remain grounded in retrieved evidence and reduce hallucinations."
+},
+{
+  "id": "proj-agenttina-5",
+  "section": "Projects - Agent Tina (Tech Stack)",
+  "content": "Tech stack: Node.js, TypeScript, Azure OpenAI (LLMs + embeddings), RAG and prompt engineering, agentic workflows, Qdrant / FAISS (vector search), Supabase (database and auth), REST APIs."
+}
+
 ]

@@ -43,6 +43,21 @@ function shouldUseRAG(embed: number[], msg: string) {
 
   const s = msg.toLowerCase().trim();
 
+  // Contact lookups must use RAG so the assistant answers from resume context
+  const contactTriggers = [
+    "phone",
+    "mobile",
+    "cell",
+    "email",
+    "e-mail",
+    "contact",
+    "reach",
+    "call",
+    "text",
+    "linkedin",
+  ];
+  if (contactTriggers.some((t) => s.includes(t))) return true;
+
   const max = Math.max(...vectors.map((v) => cosine(embed, v.embedding)));
   if (max >= 0.4) return true;
 
@@ -52,6 +67,10 @@ function shouldUseRAG(embed: number[], msg: string) {
     "project",
     "skills",
     "work",
+    "resume",
+    "summary",
+    "education",
+    "certification",
     "cloud",
     "dsa",
     "algorithm",
@@ -70,6 +89,8 @@ function shouldUseRAG(embed: number[], msg: string) {
     "integration",
     "payment",
     "design",
+    "authorize",
+    "stripe",
   ];
 
   if (triggers.some((t) => s.includes(t))) return true;
@@ -78,10 +99,7 @@ function shouldUseRAG(embed: number[], msg: string) {
 }
 
 // ---------- Cache ----------
-import {
-  getCachedEmbedding,
-  saveCachedEmbedding,
-} from "../../../../rag/cache";
+import { getCachedEmbedding, saveCachedEmbedding } from "../../../../rag/cache";
 
 // ---------- Azure Clients ----------
 const gptClient = new OpenAI({
@@ -113,6 +131,12 @@ STYLE RULE:
 - Avoid hyphens unless absolutely required like in version names.
 - No resume dumps, no lists, no robotic answers.
 
+SMALL TALK RULE:
+If the user message is a greeting or casual small talk (hi, hello, hey, good morning, how are you, etc):
+- Reply warmly in 1 short sentence.
+- Ask what they would like to know about Nikhil (experience, projects, skills, education).
+- Do not pitch ECP unless they ask.
+
 STARTUP RULE:
 Treat the ECP platform as his startup style experience. Describe how he works across many areas and builds features from the base level in a fast moving environment.
 
@@ -137,8 +161,8 @@ If user asks about a tool he did not directly use (Azure, GCP, Terraform, Kafka 
 - Explain he has not used that exact tool yet.
 - Immediately connect it to a similar or related tool from his resume and explain how the concepts transfer.
 
-END RULE:
-Always end responses with: "Would you like more detail?"
+FOLLOW UP RULE:
+Ask a short follow up question only when it helps. Do not end with a fixed repeated closing line.
 `;
 
 // -----------------------------------------------------------
@@ -153,6 +177,20 @@ Always describe Nikhil in third person. Never act as him.
 
 STYLE:
 Short, natural answers. Avoid hyphens unless required. No bullets or lists.
+
+SMALL TALK RULE:
+If the user message is a greeting or casual small talk:
+- Reply warmly in 1 short sentence.
+- Ask what they would like to know about Nikhil (experience, projects, skills, education).
+- Do not dump resume context unless they ask.
+
+CONTACT RULE:
+If the user asks for Nikhil's email or phone number, share exactly what appears in the resume context. Do not refuse and do not invent details.
+
+LINKEDIN RULE:
+If the user asks for Nikhil's LinkedIn:
+- Only share it if it appears in the resume context.
+- If it does not appear in the resume context, say it is not listed and do not invent it.
 
 STARTUP RULE:
 Treat the ECP platform as startup style experience where Nikhil handles base level development, integrations, and rapid changes.
@@ -177,8 +215,8 @@ If a tool is not in resume:
 - Say he has not used that specific tool yet.
 - Connect it to the closest tool he has used and explain concept overlap.
 
-FOLLOW UP:
-Always end with: "Would you like more detail?"
+FOLLOW UP RULE:
+Ask a short follow up question only when it helps. Do not end with a fixed repeated closing line.
 
 RESUME CONTEXT:
 ${context}
@@ -203,7 +241,11 @@ export async function POST(req: Request) {
         model: process.env.AZURE_OPENAI_GPT_DEPLOYMENT!,
         messages: [{ role: "system", content: generalSystemPrompt }, ...messages],
       });
-      return NextResponse.json({ reply: out.choices[0].message.content, mode: "general-no-vectors" });
+
+      return NextResponse.json({
+        reply: out.choices[0].message.content,
+        mode: "general-no-vectors",
+      });
     }
 
     // Embedding
@@ -233,7 +275,10 @@ export async function POST(req: Request) {
         messages: [{ role: "system", content: buildRAGPrompt(ctx) }, ...messages],
       });
 
-      return NextResponse.json({ reply: out.choices[0].message.content, mode: "rag" });
+      return NextResponse.json({
+        reply: out.choices[0].message.content,
+        mode: "rag",
+      });
     }
 
     // ---------- GENERAL ----------
@@ -243,7 +288,6 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ reply: out.choices[0].message.content, mode: "general" });
-
   } catch (err: any) {
     return NextResponse.json({ error: err?.message || "Error" }, { status: 500 });
   }

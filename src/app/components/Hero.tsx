@@ -99,7 +99,7 @@ export default function Hero() {
           {/* Social */}
           <div className="flex flex-wrap gap-3">
             <a
-              href="mailto:nikhilkothapally.reddy@gmail.com"
+              href="mailto:knikhilreddy2001@gmail.com"
               className="rounded-md bg-white px-4 py-2 text-black hover:opacity-90 flex items-center justify-center"
             >
               <Mail size={20} />
@@ -130,14 +130,18 @@ export default function Hero() {
       place-items-center
     "
   >
-    {/* Backend */}
+        {/* Backend */}
     <span className="px-3 py-1">Java</span>
     <span className="px-3 py-1">Spring Boot</span>
     <span className="px-3 py-1">Microservices</span>
+    <span className="px-3 py-1">REST APIs</span>
+    <span className="px-3 py-1">GraphQL</span>
+    <span className="px-3 py-1">Node.js</span>
     <span className="px-3 py-1">Kafka</span>
     <span className="px-3 py-1">Redis</span>
     <span className="px-3 py-1">PostgreSQL</span>
     <span className="px-3 py-1">MongoDB</span>
+
 
     {/* Frontend */}
     <span className="px-3 py-1">React</span>
@@ -150,14 +154,23 @@ export default function Hero() {
     <span className="px-3 py-1">Docker</span>
     <span className="px-3 py-1">Kubernetes</span>
     <span className="px-3 py-1">GitHub Actions</span>
+    {/* Testing */}
+<span className="px-3 py-1">Jest</span>
+<span className="px-3 py-1">JUnit</span>
+<span className="px-3 py-1">Mockito</span>
 
-    {/* AI / LLM */}
-    <span className="px-3 py-1">Azure OpenAI</span>
-    <span className="px-3 py-1">Claude</span>
-    <span className="px-3 py-1">RAG Pipeline</span>
-    <span className="px-3 py-1">Embeddings</span>
-    <span className="px-3 py-1">Prompt Eng.</span>
-    <span className="px-3 py-1">Serverless</span>
+
+   {/* AI / LLM */}
+<span className="px-3 py-1">Azure OpenAI</span>
+<span className="px-3 py-1">Agentic AI</span>
+<span className="px-3 py-1">RAG Pipeline</span>
+<span className="px-3 py-1">Embeddings</span>
+<span className="px-3 py-1">Vector DB</span>
+<span className="px-3 py-1">Python</span>
+<span className="px-3 py-1">FastAPI</span>
+<span className="px-3 py-1">Prompt Eng.</span>
+<span className="px-3 py-1">Serverless</span>
+
 
     {/* Tools */}
     <span className="px-3 py-1">Git</span>
