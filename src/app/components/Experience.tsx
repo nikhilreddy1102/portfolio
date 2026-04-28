@@ -63,22 +63,7 @@ export default function Experience() {
           </p>
         </div>
 
-        {/* Example Job 3 */}
-        <div className="space-y-3 sm:space-y-4 rounded-lg border border-gray-200 bg-white/60 p-4 sm:p-5 lg:border-0 lg:p-0 lg:bg-transparent">
-          <h3 className="text-xl sm:text-2xl font-semibold">
-            Adobe - Associate Java Developer (Jan 2020 – Feb 2022)
-          </h3>
-          <p className="text-base sm:text-[17px] lg:text-lg leading-relaxed text-gray-800">
-            At Adobe, I supported a digital media management platform that needed to be faster and more 
-            reliable to meet user expectations. The legacy system had performance bottlenecks and inconsistent 
-            testing practices, so I migrated key modules into Spring Boot, redesigned components for modularity, 
-            and adopted Test-Driven Development with JUnit and Mockito to ensure quality before release. I also 
-            optimized MySQL schemas and indexing to speed up queries, while implementing centralized error handling 
-            so APIs behaved consistently. These improvements reduced response times by 25–35%, raised test coverage 
-            to 85%, and cut post-release bugs by 40%, leaving the platform not only quicker but also more stable and 
-            easier to maintain.
-          </p>
-        </div>
+   
       </div>
     </section>
   );

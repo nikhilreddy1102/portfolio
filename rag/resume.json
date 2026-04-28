@@ -1,183 +1,134 @@
-[
-  {
-  "id": "contact-1",
-  "section": "Contact",
-  "content": "Email: knikhilreddy2001@gmail.com"
-},
 {
-  "id": "contact-2",
-  "section": "Contact",
-  "content": "Phone: +1(737) 396-6514"
-},
-{
-    "id": "summary-1",
-    "section": "Professional Summary",
-    "content": "Senior Java Developer with over 5 years of experience designing and implementing enterprise-grade, cloud-native applications across E-commerce, healthcare, and media domains. Built and integrated secure international payment terminals for ECP website using Authorize.net and Stripe, enabling seamless global e-commerce transactions. Experienced in applying data structures and algorithms including sorting, searching, hashing, and index bucketing to optimize performance and data processing efficiency."
+  "name": "Reddy Nikhil",
+  "contact": {
+    "phone": "+1 (206) 705-4856",
+    "email": "reddynikhil1102@gmail.com",
+    "location": "Seattle, WA",
+    "linkedin": "LinkedIn↗",
+    "github": "GitHub↗"
   },
-  {
-    "id": "summary-2",
-    "section": "Professional Summary",
-    "content": "Expert in Java 8/11/17, Spring Boot microservices, RESTful APIs, GraphQL, and event-driven architectures with Kafka and RabbitMQ. Skilled in AWS and Azure cloud platforms, containerization using Docker, Kubernetes, and Helm. Proficient in OAuth2, JWT, RBAC-based authentication and API security best practices."
+  "professional_summary": "Software Engineer with 4+ years of experience building scalable microservices and full-stack applications using Java/Spring Boot and modern frontend frameworks. Skilled in secure payment integrations, cloud-native architectures, and performance optimization across e-commerce and healthcare domains, with a focus on scalability, reliability, and clean system design.",
+  "technical_skills": {
+    "languages": ["Java (8/11/17)", "TypeScript", "JavaScript (ES6+)"],
+    "backend_frameworks": [
+      "Spring Boot",
+      "Spring Security",
+      "Spring Data JPA",
+      "Microservices",
+      "REST APIs",
+      "GraphQL"
+    ],
+    "frontend": [
+      "Next.js",
+      "React.js",
+      "Angular (14+)",
+      "Tailwind CSS",
+      "HTML5",
+      "CSS3"
+    ],
+    "cloud_devops": [
+      "AWS (EKS, S3, RDS, CloudWatch)",
+      "Terraform",
+      "Ansible",
+      "CI/CD",
+      "Kubernetes",
+      "Infrastructure as Code (IaC)"
+    ],
+    "databases": [
+      "PostgreSQL",
+      "MySQL",
+      "Oracle",
+      "MongoDB",
+      "Redis",
+      "DynamoDB"
+    ],
+    "messaging_streaming": [
+      "Apache Kafka",
+      "Kafka Streams",
+      "RabbitMQ",
+      "AWS SNS/SQS"
+    ],
+    "testing": [
+      "JUnit 5",
+      "TestNG",
+      "Mockito",
+      "REST Assured",
+      "Jest",
+      "TDD"
+    ],
+    "monitoring_logging": [
+      "ELK Stack (Elasticsearch, Logstash, Kibana)",
+      "Prometheus",
+      "Grafana",
+      "Splunk"
+    ],
+    "security": [
+      "OAuth2",
+      "JWT",
+      "API Gateway",
+      "HTTPS/TLS",
+      "HIPAA",
+      "SOC2"
+    ],
+    "tools_collaboration": [
+      "Git",
+      "Bitbucket",
+      "GitLab",
+      "Jira",
+      "Maven",
+      "Gradle",
+      "SonarQube",
+      "Agile/Scrum",
+      "SDLC"
+    ]
   },
-  {
-    "id": "summary-3",
-    "section": "Professional Summary",
-    "content": "Experienced in database development using Oracle, PostgreSQL, MongoDB, and Redis. Strong in CI/CD automation using Jenkins, GitHub Actions, and Azure DevOps. Adept in Agile/Scrum methodologies, cloud cost optimization, observability with ELK, Prometheus, and Grafana, and AI-driven automation for performance improvements."
-  },
-
-  {
-    "id": "skills-1",
-    "section": "Technical Skills",
-    "content": "Languages & Frameworks: Java 8/11/17, Python, TypeScript, Spring Boot, Spring Cloud, Spring MVC, Spring Security, Hibernate, RESTful APIs, GraphQL, Microservices Architecture."
-  },
-  {
-    "id": "skills-2",
-    "section": "Technical Skills",
-    "content": "Frontend Technologies: Angular 14+, React.js, Next.js, JavaScript ES6+, Tailwind CSS, HTML5, CSS3."
-  },
-  {
-    "id": "skills-3",
-    "section": "Technical Skills",
-    "content": "Cloud & DevOps: AWS EKS, EC2, S3, RDS, Lambda, CloudWatch, Azure App Services, Azure DevOps, Blob Storage, Docker, Kubernetes, Helm, Jenkins, GitHub Actions, Terraform, Ansible, CI/CD pipelines, Infrastructure as Code."
-  },
-  {
-    "id": "skills-4",
-    "section": "Technical Skills",
-    "content": "Databases: Oracle, PostgreSQL, MySQL, MongoDB, Redis, DynamoDB."
-  },
-  {
-    "id": "skills-5",
-    "section": "Technical Skills",
-    "content": "Messaging & Streaming: Apache Kafka, RabbitMQ, Kafka Streams, AWS SNS/SQS."
-  },
-  {
-    "id": "skills-6",
-    "section": "Technical Skills",
-    "content": "Testing: JUnit5, TestNG, Mockito, REST Assured, Jest, TDD methodologies."
-  },
-  {
-    "id": "skills-7",
-    "section": "Technical Skills",
-    "content": "Monitoring: ELK Stack, Prometheus, Grafana, Splunk, CloudWatch, Log4j, Application Insights."
-  },
-  {
-    "id": "skills-8",
-    "section": "Technical Skills",
-    "content": "Security & API Management: OAuth2, JWT, RBAC, SSO, Swagger, API Gateway, TLS/HTTPS, HIPAA and SOC2 compliance."
-  },
-
-  {
-    "id": "exp-codelance-1",
-    "section": "Experience - Codelance IT (Jan 2024 – Present)",
-    "content": "Built the front-end architecture for Ethics Consulting Partners (ECP), a multi-module e-commerce platform combining Corporate Training and Promo Store, using Next.js, TypeScript, and Tailwind CSS. Delivered responsive, high-performance UI aligned with Figma designs."
-  },
-  {
-    "id": "exp-codelance-2",
-    "section": "Experience - Codelance IT",
-    "content": "Developed backend services using NestJS and REST APIs for authentication, course management, B2B user accounts, and product catalogs. Ensured scalability, maintainability, and secure data flow."
-  },
-  {
-    "id": "exp-codelance-3",
-    "section": "Experience - Codelance IT",
-    "content": "Integrated Absorb LMS via REST APIs, enabling enterprise-grade training content sync, user progress tracking, and SSO experiences. Built custom B2B modules supporting client-specific configurations and dashboards."
-  },
-  {
-    "id": "exp-codelance-4",
-    "section": "Experience - Codelance IT",
-    "content": "Developing an AI-powered chatbot assistant using Claude API and Next.js to enhance user engagement and support automation across the ECP platform."
-  },
-  {
-    "id": "exp-codelance-5",
-    "section": "Experience - Codelance IT",
-    "content": "Implemented intelligent search, sorting, and filtering logic in Next.js for dynamic courses and product pages. Optimized performance with caching and efficient data-fetching strategies."
-  },
-  {
-    "id": "exp-codelance-6",
-    "section": "Experience - Codelance IT",
-    "content": "Integrated secure payment gateways including Authorize.net and Stripe. Built scalable cart and checkout system using Zustand with real-time state updates and cart persistence."
-  },
-  {
-    "id": "exp-codelance-7",
-    "section": "Experience - Codelance IT",
-    "content": "Implemented Jest tests, GitHub Actions CI/CD pipelines, and Docker for automated deployments. Deployed ECP web apps on a VPS using Nginx for SSL termination and load balancing."
-  },
-
-  {
-    "id": "exp-cognizant-1",
-    "section": "Experience - Cognizant (Feb 2022 – Jun 2023)",
-    "content": "Developed Spring Boot microservices for EMR systems using JWT-secured REST and GraphQL APIs ensuring HIPAA and FHIR compliance."
-  },
-  {
-    "id": "exp-cognizant-2",
-    "section": "Experience - Cognizant",
-    "content": "Optimized high-volume appointment scheduling modules using slot bucketing, hashing, and index-based optimizations, improving performance by 40%."
-  },
-  {
-    "id": "exp-cognizant-3",
-    "section": "Experience - Cognizant",
-    "content": "Optimized PostgreSQL queries, implemented Redis caching, reduced database load, and improved API response times by 30%."
-  },
-  {
-    "id": "exp-cognizant-4",
-    "section": "Experience - Cognizant",
-    "content": "Automated CI/CD workflows with Jenkins and Docker, deploying microservices on AWS EKS with EC2, S3, and RDS integrations."
-  },
-  {
-    "id": "exp-cognizant-5",
-    "section": "Experience - Cognizant",
-    "content": "Implemented real-time monitoring using ELK Stack and Splunk to proactively identify and resolve issues. Worked in Agile/Scrum methodology using Jira."
-  },
-
-  {
-    "id": "exp-adobe-1",
-    "section": "Experience - Adobe (Jan 2020 – Feb 2022)",
-    "content": "Developed modular Java backend services for content management systems to improve code maintainability and reusability."
-  },
-  {
-    "id": "exp-adobe-2",
-    "section": "Experience - Adobe",
-    "content": "Optimized JSP components and Servlets for improved application performance. Applied TDD with JUnit and Mockito."
-  },
-  {
-    "id": "exp-adobe-3",
-    "section": "Experience - Adobe",
-    "content": "Automated Linux deployments using Bash scripts and implemented centralized error logging for better fault traceability."
-  },
-
-  {
-    "id": "education-1",
-    "section": "Education",
-    "content": "Master of Science in Computer and Information Systems, Saint Louis University, USA (Dec 2024)."
-  },
-  {
-    "id": "certifications-1",
-    "section": "Certifications",
-    "content": "AWS Certified Developer – Associate (DVA-C02)."
-  },
-  {
-  "id": "proj-agenttina-1",
-  "section": "Projects - Agent Tina (AI Job Matching & Resume Analysis Agent)",
-  "content": "Problem: Traditional job platforms rely on keyword matching and static filters. This leads to missed matches, weak ATS alignment signals, and low visibility into skill gaps."
-},
-{
-  "id": "proj-agenttina-2",
-  "section": "Projects - Agent Tina (AI Job Matching & Resume Analysis Agent)",
-  "content": "Solution: Built Agent Tina to actively discover jobs from public sources (company career pages and Greenhouse-powered listings), understand resumes and job descriptions semantically, and generate explainable match results with clear fit reasoning."
-},
-{
-  "id": "proj-agenttina-3",
-  "section": "Projects - Agent Tina (Agentic AI Architecture)",
-  "content": "Agentic AI architecture: Resume Parser Agent (structured candidate profile), Job Parser Agent (normalized job schema), Matching Agent (semantic ranking), ATS Scoring Agent (ATS-aligned fit signals), Skill Gap Agent (missing or weak skills), Dedup Agent (removes duplicate postings)."
-},
-{
-  "id": "proj-agenttina-4",
-  "section": "Projects - Agent Tina (RAG & Retrieval)",
-  "content": "RAG grounding: Jobs and resumes are embedded and stored in a vector database. At query time, relevant context is retrieved and injected into prompts so outputs remain grounded in retrieved evidence and reduce hallucinations."
-},
-{
-  "id": "proj-agenttina-5",
-  "section": "Projects - Agent Tina (Tech Stack)",
-  "content": "Tech stack: Node.js, TypeScript, Azure OpenAI (LLMs + embeddings), RAG and prompt engineering, agentic workflows, Qdrant / FAISS (vector search), Supabase (database and auth), REST APIs."
+  "professional_experience": [
+    {
+      "company": "Ethics Consulting Partners",
+      "role": "Software Engineer",
+      "location": "USA",
+      "duration": "Jan 2024 – Present",
+      "responsibilities": [
+        "Designed and developed ECP, an end-to-end e-commerce and corporate training platform for B2B clients.",
+        "Built Spring Boot backend services using GraphQL APIs, Spring Security, JPA/Hibernate, and PostgreSQL.",
+        "Implemented a RAG-based AI chatbot using vector database and Node.js with GraphQL APIs.",
+        "Integrated Absorb LMS, Stripe, and Authorize.net for SSO and secure payment workflows.",
+        "Enhanced security using HashiCorp Vault and automated CI/CD with GitHub Actions, Docker, and Nginx."
+      ]
+    },
+    {
+      "company": "Cognizant",
+      "role": "Full Stack Java Developer",
+      "location": "India",
+      "duration": "Feb 2022 – Jun 2023",
+      "responsibilities": [
+        "Led development of Spring Boot microservices for EMR systems with HIPAA and FHIR compliance.",
+        "Optimized patient scheduling workflows improving performance by 40%.",
+        "Enhanced backend performance using PostgreSQL tuning, Redis caching, and MongoDB.",
+        "Deployed containerized services on AWS EKS with CI/CD using Jenkins, Docker, and Terraform.",
+        "Implemented logging and monitoring using ELK Stack and Splunk."
+      ]
+    },
+    {
+      "company": "Citi Bank",
+      "role": "Associate Java Developer",
+      "location": "India",
+      "duration": "Jan 2020 – Feb 2022",
+      "responsibilities": [
+        "Developed Spring Boot microservices for banking systems improving transaction efficiency.",
+        "Built secure REST and GraphQL APIs using OAuth2 and JWT.",
+        "Improved performance using SQL optimization and Redis caching.",
+        "Implemented event-driven architecture using Apache Kafka.",
+        "Deployed services on AWS EKS with Docker and CI/CD pipelines."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Master of Science in Computer and Information Sciences",
+      "institution": "Saint Louis University",
+      "location": "Saint Louis, USA",
+      "graduation": "Dec 2024"
+    }
+  ]
 }
-
-]
